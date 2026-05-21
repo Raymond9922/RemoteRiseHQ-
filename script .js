@@ -1,85 +1,47 @@
-// =========================
-// PREMIUM INTERACTIONS
-// RemoteRiseHQ Script
-// =========================
+/* =========================
+   REMOTERISEHQ SCRIPT ENGINE
+   Lightweight UX Enhancer
+========================= */
 
-// Smooth hover lift enhancement (extra polish on cards)
-const cards = document.querySelectorAll('.card');
+/* Smooth scroll for anchor links */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener("click", function(e){
+e.preventDefault();
+document.querySelector(this.getAttribute("href"))
+.scrollIntoView({
+behavior: "smooth"
+});
+});
+});
+
+/* Navbar background effect on scroll */
+window.addEventListener("scroll", function(){
+const navbar = document.querySelector(".navbar");
+
+if(window.scrollY > 50){
+navbar.style.background = "#0b0f1a";
+navbar.style.borderBottom = "1px solid rgba(255,255,255,0.1)";
+} else {
+navbar.style.background = "#0f172a";
+navbar.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
+}
+});
+
+/* Simple animation reveal on scroll */
+const cards = document.querySelectorAll(".card, .job-card, .project-card, .blog-post");
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.style.opacity = "1";
+entry.target.style.transform = "translateY(0)";
+}
+});
+}, { threshold: 0.1 });
 
 cards.forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    card.style.transform = 'translateY(-12px) scale(1.02)';
-    card.style.transition = '0.3s ease';
-  });
-
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = 'translateY(0px) scale(1)';
-  });
-});
-
-
-// =========================
-// SMOOTH SCROLL BEHAVIOR
-// =========================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const target = document.querySelector(this.getAttribute("href"));
-
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
-  });
-});
-
-
-// =========================
-// NAVBAR SCROLL EFFECT
-// =========================
-
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar");
-
-  if (window.scrollY > 50) {
-    navbar.style.background = "rgba(10, 15, 30, 0.85)";
-    navbar.style.backdropFilter = "blur(18px)";
-  } else {
-    navbar.style.background = "rgba(10, 15, 30, 0.6)";
-    navbar.style.backdropFilter = "blur(15px)";
-  }
-});
-
-
-// =========================
-// BUTTON CLICK FEEDBACK
-// =========================
-
-const buttons = document.querySelectorAll("a");
-
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    btn.style.transform = "scale(0.96)";
-    setTimeout(() => {
-      btn.style.transform = "scale(1)";
-    }, 120);
-  });
-});
-
-
-// =========================
-// PAGE LOAD ANIMATION
-// =========================
-
-window.addEventListener("load", () => {
-  document.body.style.opacity = "0";
-  document.body.style.transition = "opacity 0.6s ease";
-
-  setTimeout(() => {
-    document.body.style.opacity = "1";
-  }, 100);
+card.style.opacity = "0";
+card.style.transform = "translateY(20px)";
+card.style.transition = "0.5s ease-out";
+observer.observe(card);
 });
