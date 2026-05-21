@@ -1,301 +1,328 @@
 /* =========================
-GLOBAL RESET
+   GLOBAL RESET
 ========================= */
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Inter', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter', sans-serif;
 }
 
 body{
-  background: radial-gradient(circle at top, #0b1b33, #050a14);
-  color:#ffffff;
-  line-height:1.6;
-  overflow-x:hidden;
+background:#0b0f1a;
+color:#ffffff;
+line-height:1.6;
 }
 
 /* =========================
-NAVBAR (GLASS + PREMIUM)
+   NAVBAR
 ========================= */
 .navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 8%;
-  position:sticky;
-  top:0;
-  z-index:999;
-  background: rgba(10, 15, 30, 0.6);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:#0f172a;
+position:sticky;
+top:0;
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 .navbar .logo{
-  font-size:22px;
-  font-weight:800;
-  background: linear-gradient(90deg,#3A86FF,#00D4FF);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+font-weight:700;
+color:#3A86FF;
+font-size:18px;
 }
 
 .navbar ul{
-  display:flex;
-  gap:18px;
-  list-style:none;
+display:flex;
+list-style:none;
+gap:20px;
 }
 
 .navbar ul li a{
-  text-decoration:none;
-  color:#e5e7eb;
-  font-weight:500;
-  transition:0.3s;
-  position:relative;
+color:#ffffff;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
 }
 
 .navbar ul li a:hover{
-  color:#00D4FF;
+color:#00D4FF;
 }
 
 /* =========================
-HERO SECTION
+   HERO SECTION
 ========================= */
 .hero{
-  padding:140px 8% 90px;
-  text-align:center;
+padding:100px 40px;
+text-align:center;
+background:linear-gradient(135deg,#0b0f1a,#111827);
 }
 
 .hero h1{
-  font-size:3.6rem;
-  max-width:900px;
-  margin:auto;
-  letter-spacing:-1px;
-}
-
-.hero span{
-  background: linear-gradient(90deg,#3A86FF,#00D4FF,#7CFFCB);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+font-size:38px;
+max-width:900px;
+margin:0 auto;
 }
 
 .hero p{
-  margin-top:20px;
-  max-width:700px;
-  margin-left:auto;
-  margin-right:auto;
-  color:#cbd5e1;
-  font-size:1.05rem;
+margin-top:20px;
+opacity:0.8;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.hero-buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
 }
 
 /* =========================
-PAGE HERO
+   BUTTONS
 ========================= */
-.page-hero{
-  padding:120px 8% 60px;
-  text-align:center;
+.btn{
+padding:12px 20px;
+border-radius:8px;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+display:inline-block;
 }
 
-.page-hero h1{
-  font-size:3rem;
+.primary{
+background:#3A86FF;
+color:white;
 }
 
-.page-hero p{
-  margin-top:10px;
-  color:#cbd5e1;
+.secondary{
+background:#111827;
+border:1px solid #3A86FF;
+color:white;
+}
+
+.outline{
+border:1px solid #ffffff30;
+color:white;
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
 }
 
 /* =========================
-BUTTONS (GLOW STYLE)
+   SECTIONS
 ========================= */
-.hero-buttons,
-.contact-buttons{
-  margin-top:30px;
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
+.section{
+padding:60px 40px;
 }
 
-.primary-btn{
-  padding:12px 26px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:700;
-  color:white;
-  background: linear-gradient(90deg,#3A86FF,#00D4FF);
-  box-shadow:0 0 20px rgba(58,134,255,0.4);
-  transition:0.3s;
-}
-
-.primary-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 30px rgba(0,212,255,0.6);
-}
-
-.secondary-btn{
-  padding:12px 26px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:600;
-  color:#fff;
-  background: rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.1);
-  transition:0.3s;
-}
-
-.secondary-btn:hover{
-  background: rgba(255,255,255,0.15);
-}
-
-.whatsapp-btn{
-  padding:12px 26px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:700;
-  color:white;
-  background:#25D366;
-  box-shadow:0 0 15px rgba(37,211,102,0.4);
-  transition:0.3s;
-}
-
-.whatsapp-btn:hover{
-  transform:scale(1.05);
+.section h2{
+text-align:center;
+margin-bottom:40px;
 }
 
 /* =========================
-GRID SYSTEM
+   GRID CARDS
 ========================= */
-.grid,
-.projects-grid,
-.jobs-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap:25px;
-  padding:60px 8%;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-/* =========================
-CARDS (GLASSMORPHISM)
-========================= */
 .card{
-  background: rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.08);
-  padding:25px;
-  border-radius:20px;
-  backdrop-filter: blur(12px);
-  transition:0.4s;
-  position:relative;
-  overflow:hidden;
-}
-
-.card::before{
-  content:"";
-  position:absolute;
-  top:-50%;
-  left:-50%;
-  width:200%;
-  height:200%;
-  background: radial-gradient(circle, rgba(58,134,255,0.2), transparent 60%);
-  transform:rotate(25deg);
+background:#111827;
+padding:20px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.05);
+transition:0.3s;
 }
 
 .card:hover{
-  transform:translateY(-10px);
-  border-color:#00D4FF;
-  box-shadow:0 10px 30px rgba(0,212,255,0.2);
+transform:translateY(-5px);
+border-color:#3A86FF;
 }
 
 .card h3{
-  margin-bottom:10px;
-  position:relative;
-  z-index:2;
-}
-
-.card p{
-  color:#cbd5e1;
-  position:relative;
-  z-index:2;
-}
-
-.card a{
-  display:inline-block;
-  margin-top:12px;
-  color:#00D4FF;
-  font-weight:600;
-  text-decoration:none;
-  position:relative;
-  z-index:2;
+margin-bottom:10px;
 }
 
 /* =========================
-ABOUT / CONTENT
+   HIRE ME BOX
 ========================= */
-.container{
-  padding:60px 8%;
+.hire-box{
+margin:60px 40px;
+padding:40px;
+background:linear-gradient(135deg,#111827,#0f172a);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:15px;
+text-align:center;
 }
 
-.about-card{
-  background: rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.08);
-  padding:30px;
-  border-radius:20px;
-  backdrop-filter: blur(12px);
+.hire-box h2{
+margin-bottom:10px;
 }
 
-.skills-grid{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:20px;
+.service-list{
+margin:20px 0;
+text-align:left;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+opacity:0.9;
 }
 
-.skills-grid span{
-  padding:10px 15px;
-  border-radius:20px;
-  background: rgba(58,134,255,0.15);
-  border:1px solid rgba(58,134,255,0.2);
+.whatsapp.full{
+width:100%;
+margin-top:20px;
 }
 
 /* =========================
-CONTACT
+   PAGE HEADER
 ========================= */
-.contact-section{
-  padding:60px 8%;
+.page-header{
+padding:80px 40px;
+text-align:center;
+background:#0f172a;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.page-header h1{
+font-size:32px;
+}
+
+/* =========================
+   BLOG
+========================= */
+.blog-container{
+padding:40px;
+display:flex;
+flex-direction:column;
+gap:40px;
+}
+
+.blog-post{
+background:#111827;
+padding:20px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.blog-post img{
+width:100%;
+border-radius:10px;
+margin:15px 0;
+}
+
+/* =========================
+   JOBS
+========================= */
+.job-container{
+padding:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.job-card{
+background:#111827;
+padding:20px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.apply-btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 15px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+.project-container{
+padding:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.project-card{
+background:#111827;
+padding:20px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.project-card a{
+color:#3A86FF;
+text-decoration:none;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact-container{
+padding:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .contact-card{
-  background: rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.08);
-  padding:30px;
-  border-radius:20px;
-  margin-bottom:20px;
+background:#111827;
+padding:20px;
+border-radius:12px;
+}
+
+.whatsapp-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 20px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:8px;
 }
 
 /* =========================
-FOOTER
+   FOOTER
 ========================= */
 footer{
-  text-align:center;
-  padding:30px;
-  color:#94a3b8;
-  border-top:1px solid rgba(255,255,255,0.08);
+text-align:center;
+padding:20px;
+background:#0f172a;
+margin-top:40px;
+font-size:13px;
+opacity:0.7;
 }
 
 /* =========================
-RESPONSIVE
+   RESPONSIVE
 ========================= */
 @media(max-width:768px){
-  .hero h1{
-    font-size:2.3rem;
-  }
+.hero h1{
+font-size:26px;
+}
 
-  .navbar{
-    flex-direction:column;
-    gap:10px;
-  }
+.navbar{
+flex-direction:column;
+gap:10px;
+}
 
-  .navbar ul{
-    flex-wrap:wrap;
-    justify-content:center;
-  }
+.navbar ul{
+flex-wrap:wrap;
+justify-content:center;
+}
 }
